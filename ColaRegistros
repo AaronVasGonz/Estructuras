@@ -1,0 +1,50 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package proyecto.estructuras;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author arjoz
+ */
+public class ColaRegistroUsuarios {
+
+    private NodoCRegitroUsuarios inicio;
+    private NodoCRegitroUsuarios fin;
+
+    public ColaRegistroUsuarios() {
+        this.inicio = null;
+        this.fin = null;
+    }
+
+    public boolean esVacia() {
+        if (inicio == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void encolar() {
+        Datos d = new Datos();
+        d.setNombre(JOptionPane.showInputDialog(null, "Digite su nombre: "));
+        d.setApellidos(JOptionPane.showInputDialog(null, "Ingrese su apellido"));
+        d.setNickname(JOptionPane.showInputDialog(null, "Ingrese su nombre de usuario"));
+        d.setEstadoDeCuenta(JOptionPane.showConfirmDialog(null, "La cuenta esta activa?", "Estado de cuenta", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION);
+        NodoCRegitroUsuarios n = new NodoCRegitroUsuarios();
+        n.setElemento(d);
+        if (esVacia()) {
+            inicio = n;
+            fin = n;
+
+        } else {
+            fin.setSiguiente(n);
+            fin = n;
+        }
+
+    }
+
+}
