@@ -1,0 +1,48 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package proyecto.estructuras;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author arjoz
+ */
+public class RegistroUsuarios {
+
+    public RegistroUsuarios() {
+    }
+ 
+      public void MenuRegistro(){
+          ColaRegistroUsuarios c = new ColaRegistroUsuarios();
+                 boolean salir = false;
+        while (!salir) {
+            String opcion = JOptionPane.showInputDialog(
+                    "Seleccione una opción:\n" +
+                    "1. Login  \n" +
+                    "2. Registro de usuarios  \n" +
+                    "3. Salir  \n"
+            );
+
+            switch (opcion) {
+                case "1":
+                    JOptionPane.showMessageDialog(null, "Seleccionaste la Opción Login");
+                    
+                    break;
+                case "2":
+                    JOptionPane.showMessageDialog(null, "Registro de Usuarios");
+                    c.encolar();
+                    break;
+                case "3":
+                    salir = true;
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opción inválida");
+            }
+        }
+      
+      }
+ 
+ }
